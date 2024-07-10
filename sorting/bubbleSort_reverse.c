@@ -2,11 +2,11 @@
 
 #define n 10
 
-void bubbleSort(int *nums, int size){
+void bubbleSort_reverse(int *nums, int size){
     int count = 0;
     for(int i=size; i>1;i--){
-        for(int j=1; j<i;j++){ // Since we are sending the biggest element to the end of the array each iteration we save a couple of iterations by going up to i instead of n
-            if(nums[j]<nums[j-1]){
+        for(int j=1; j<i;j++){ // Change comparisson here to send the smallest element to the end.
+            if(nums[j]>nums[j-1]){
                 int buffer = nums[j];
                 nums[j] = nums[j-1];
                 nums[j-1] = buffer;
@@ -22,5 +22,5 @@ void bubbleSort(int *nums, int size){
 
 int main(){
     int array[n] = {15, 23, 0, 23, 7, -4, 1, 97, 16, 80};
-    bubbleSort(array, n);
+    bubbleSort_reverse(array, n);
 }

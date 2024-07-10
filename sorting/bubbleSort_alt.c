@@ -1,11 +1,13 @@
+// Modification of bubble sort so that the smallest element is in the leftmost part instead the greatest in the rightmost part each iteration
+
 #include <stdio.h>
 
 #define n 10
 
 void bubbleSort(int *nums, int size){
     int count = 0;
-    for(int i=size; i>1;i--){
-        for(int j=1; j<i;j++){ // Since we are sending the biggest element to the end of the array each iteration we save a couple of iterations by going up to i instead of n
+    for(int i=0; i<size-1; i++){
+        for(int j=size-1; j>i;j--){ // Since we are sending the biggest element to the end of the array each iteration we save a couple of iterations by going up to i instead of n
             if(nums[j]<nums[j-1]){
                 int buffer = nums[j];
                 nums[j] = nums[j-1];

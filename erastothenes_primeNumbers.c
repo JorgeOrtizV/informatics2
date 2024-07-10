@@ -3,7 +3,8 @@
 #include <string.h>
 
 void erastothenes(int n){
-    bool result_array[n+1];
+    int array_size = n+1;
+    bool result_array[array_size];
     memset(result_array, true, sizeof(result_array));
     for(int i=2;i*i<=n;i++){
         if(result_array[i] == true){
